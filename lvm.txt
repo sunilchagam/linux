@@ -1,0 +1,28 @@
+fdisk /dev/sdb
+  501  pvcreate /dev/sdb7 /dev/sdb8
+  502  pvdisplay /dev/sdb7
+  503  pvdisplay /dev/sdb8
+  504  pvs
+  505  vgcreate vg1 /dev/sdb7 /dev/sdb8
+  506  pvdisplay /dev/sdb8
+  507  vgdisplay vg1 | more
+  508  lvcreate -n lv1 -L 400M vg1
+  509  lvcreate -n lv2 -l 40 vg1
+  510  lvdisplay /dev/vg1/lv1
+  511  lvdisplay /dev/vg1/lv2
+  512  vgdisplay vg1
+  513  pvdisplay /dev/sdb7
+  514  vgs
+  515  lvs
+  516  pvs
+  517  mkfs -t xfs /dev/vg1/lv1
+  518  mkdir /lvstore
+  519  mount /dev/vg1/lv1 /lvstore
+  520  df -hT
+  521  cd /lvstore
+  522  cp /root/Desktop/ /lvstore
+  523  cp /root/Desktop/* /lvstore
+  524  ls
+  525  df -hT
+  526  vim /etc/fstab
+  527  history
