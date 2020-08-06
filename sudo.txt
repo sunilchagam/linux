@@ -1,0 +1,9 @@
+ visudo
+  476  cat /etc/passwd
+  477  visudo -f /etc/sudoers
+  478  passwd sunil
+  479  visudo -f /etc/sudoers
+  480  groupmems -g wheel -l
+  481  gpasswd -a chinna wheel
+  482  visudo -f /etc/sudoers
+  483  cat /etc/sudoers
