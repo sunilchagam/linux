@@ -1,0 +1,17 @@
+setfacl -m u:user3:rwx file4
+  640  getfacl file4
+  641  setfacl -m u:sunil:r-- file4
+  642  getfacl file4
+  643  setfacl -g:chinna:--- file4
+  644  setfacl g:chinna:--- file4
+  645  setfacl -m g:chinna:--- file4
+  646  getfacl file4
+  647  setfacl -x u:sunil file4
+  648  setfacl -x g:chinna:--- file4
+  649  setfacl -x g:chinna file4
+  650  getfacl file4
+  651  setfacl -x g:user3 file4
+  652  getfacl file4
+  653  setfacl -x u:user3 file4
+  654  getfacl file4
+  655  setfacl -x u:c
