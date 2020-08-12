@@ -1,0 +1,38 @@
+cd Desktop/
+   27  ifconfig | more
+   28  nmcli connection show
+   29  nmcli device status
+   30  ifconfig | more
+   31  nmcli connection show
+   32  nmcli device status
+   33  nmcli connection add con-name eno33554992 ifname eno33554992 autoconnect no type ethernet ip4 192.168.91.130 gw4 192.168.91.2
+   34  nmcli connection add con-name eno50332216 ifname eno50332216 autoconnect no type ethernet ip4 192.168.91.131 gw4 192.168.91.2
+   35  nmtui
+   36  ifconfig | more
+   37  nmtui
+   38  ifconfig | more
+   39  ifup eno50332216
+   40  ifdown eno50332216
+   41  ifup eno50332216
+   42  cd /proc/net/bonding/
+   43  nmcli device status
+   44  nmcli connection show
+   45  nmcli connection add type bond ifname bond0 con-name bond0 mode active-backup primary eno33554992 miimon 200 ip4 192.168.91.142 gw4 192.168.91.2
+   46  nmcli connection add type bond-slave ifname eno33554992 master bond0
+   47  nmcli connection add type bond-slave ifname eno50332216 master bond0
+   48  ifdown eno50332216
+   49* ifconfig | more
+   50  ifup eno50332216
+   51  ifconfig | more
+   52  cd /proc/net/bonding/
+   53  ls
+   54  cat bond0
+   55  cd /etc/sysconfig/network-scripts/
+   56  ls
+   57  vim ifcfg-bond-slave-eno33554992
+   58  vim ifcfg-eno33554992
+   59  vim ifcfg-bond-slave-eno33554992
+   60  vim ifcfg-eno33554992
+   61  vim ifcfg-bond-slave-eno50332216
+   62  vim ifcfg-eno50332216
+   63  cat bond0
