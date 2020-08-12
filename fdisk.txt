@@ -1,0 +1,37 @@
+  init 6
+  500  fdisk -l | grep sdc
+  501  fdisk -l | grep sdd
+  502  fdisk -l | grep sde
+  503  fdisk /dev/sdc
+  504  fdisk /dev/sdd
+  505  partprobe
+  506  partprobe /dev/sdd
+  507  mkfs -t xfs /dev/sdd1
+  508  mkdir /storage1
+  509  mount /dev/sdd1 /storage1
+  510  cd /storage1
+  511  cp /root/Desktop/*
+  512  umount /storage1
+  513  cd ..
+  514  umount /storage1
+  515  mount /dev/sdd1 /storage1
+  516  cd /storage1/
+  517  df -hT
+  518  vim /etc/fstab
+  519  vgcreate VGRLL /dev/sdc1 /dev/sde
+  520  vgdisplay VGRLL
+  521  cd
+  522  lvcreate -n LVsmall -L 200M VGRLL
+  523  lvcreate -n LBbig -L 600M VGRLL
+  524  mkfs -t xfs /dev/VGRLL/LVsmall
+  525  mkdir /lvsmall
+  526  mount /dev/VGRLL/LVsmall /lvsmall/
+  527  mkfs -t xfs /dev/VGRLL/LBbig
+  528  mkdir /lbbig
+  529  mount /dev/VGRLL/LBbig /lbbig/
+  530  df -hT
+  531  vim /etc/fstab
+  532  lvextend -L +100M /dev/VGRLL/LVsmall
+  533  xfs_growfs /dev/VGRLL/LVsmall
+  534  df -hT
+  535  cd Desktop/
