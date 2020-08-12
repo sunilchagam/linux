@@ -1,0 +1,22 @@
+ df -hT
+    2  df -hT
+    3  cd /run/media/root/RHEL-7.0\ Server.x86_64/Packages/
+    4  rpm -ivh vsftpd-3.0.2-9.el7.x86_64.rpm 
+    5  cd /var/ftp/pub/
+    6  ls
+    7  mkdir packages
+    8  cd packages/
+    9  pwd
+   10  cp -v /run/media/root/RHEL-7.0\ Server.x86_64/Packages/* /var/ftp/pub/packages/
+   11  ls
+   12  pwd
+   13  createrepo /var/ftp/pub/packages/
+   14  systemctl restart vsftpd
+   15  systemctl enable vsftpd
+   16  cd /etc/yum.repos.d/
+   17  mv * /tmp/
+   18  vim server.repo
+   19  yum clean all
+   20  yum repolist
+   21  yum install zsh -y
+   22  cd ..
