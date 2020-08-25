@@ -1,28 +1,23 @@
-fdisk /dev/sdb
-  501  pvcreate /dev/sdb7 /dev/sdb8
-  502  pvdisplay /dev/sdb7
-  503  pvdisplay /dev/sdb8
-  504  pvs
-  505  vgcreate vg1 /dev/sdb7 /dev/sdb8
-  506  pvdisplay /dev/sdb8
-  507  vgdisplay vg1 | more
-  508  lvcreate -n lv1 -L 400M vg1
-  509  lvcreate -n lv2 -l 40 vg1
-  510  lvdisplay /dev/vg1/lv1
-  511  lvdisplay /dev/vg1/lv2
-  512  vgdisplay vg1
-  513  pvdisplay /dev/sdb7
-  514  vgs
-  515  lvs
-  516  pvs
-  517  mkfs -t xfs /dev/vg1/lv1
-  518  mkdir /lvstore
-  519  mount /dev/vg1/lv1 /lvstore
-  520  df -hT
-  521  cd /lvstore
-  522  cp /root/Desktop/ /lvstore
-  523  cp /root/Desktop/* /lvstore
-  524  ls
-  525  df -hT
-  526  vim /etc/fstab
-  527  history
+ umount /storage1
+    3  cd ..
+    4  umount /storage1
+    5  mount /dev/sdd1 /storage1
+    6  cd /storage1/
+    7  df -hT
+    8  vim /etc/fstab
+    9  vgcreate VGRLL /dev/sdc1 /dev/sde
+   10  vgdisplay VGRLL
+   11  cd
+   12  lvcreate -n LVsmall -L 200M VGRLL
+   13  lvcreate -n LBbig -L 600M VGRLL
+   14  mkfs -t xfs /dev/VGRLL/LVsmall
+   15  mkdir /lvsmall
+   16  mount /dev/VGRLL/LVsmall /lvsmall/
+   17  mkfs -t xfs /dev/VGRLL/LBbig
+   18  mkdir /lbbig
+   19  mount /dev/VGRLL/LBbig /lbbig/
+   20  df -hT
+   21  vim /etc/fstab
+   22  lvextend -L +100M /dev/VGRLL/LVsmall
+   23  xfs_growfs /dev/VGRLL/LVsmall
+   24  df -hT
