@@ -1,0 +1,28 @@
+fdisk /dev/sdb
+  298  partprobe /dev/sdb
+  299  pvcreate /dev/sdb10 /dev/sdb11
+  300  vgcreate blr /dev/sdb10 /dev/sdb11
+  301  lvcreate -n lv1 -L 300M blr
+  302  mkfs -t ext4 /dev/blr/lv1
+  303  mkdir /rhel6
+  304  mount /dev/blr/lv1 /rhel6/
+  305  df -hT
+  306  cd /rhel6/
+  307  ls
+  308  cp /root/Desktop/* .
+  309  ls
+  310  cd ...
+  311  cd ..
+  312  lvextend -L +100M /dev/blr/lv1
+  313  resize2fs -p /dev/blr/lv1
+  314  lvdisplay /dev/blr/lv1
+  315  cd
+  316  umount /rhel6/
+  317  e2fsck -f /dev/blr/lv1
+  318  resize2fs /dev/blr/lv1 250M
+  319  lvreduce -L -150M /dev/blr/lv1
+  320  mount /dev/blr/lv1
+  321  mount /dev/blr/lv1 /rhel6/
+  322  df -hT
+  323  cd /rhel6/ 
+  324  ls
