@@ -1,0 +1,101 @@
+ yum install samba -y
+  197  mkdir /common/
+  198  rm -rf common
+  199  mkdir /common/
+  200  rm common
+  201  ls
+  202  vim /etc/samba/smb.conf
+  203  systemctl restart smb
+  204  iptables -F
+  205  ifconfig | more
+  206  getenforce
+  207  setenforce
+  208  setenforce 0
+  209  getenforce 
+  210  setenforce 1
+  211  getenforce 
+  212  ls -Zd /common/
+  213  chcon -Rt samba_share_t /common
+  214  ls -Zd /common/
+  215  getsebool -a | grep samba
+  216  setsebool -P samba_create_home_dirs=1
+  217  setsebool -P samba_domain_controller=1
+  218  setsebool -P samba_enable_home_dirs=1
+  219  setsebool -P samba_export_all_ro=1
+  220  setsebool -P samba_export_all_rw=1
+  221  getsebool -a | grep samba
+  222  nmtui
+  223  ls
+  224  vim /etc/samba/smb.conf
+  225  smbpasswd -a chinna
+  226  smbpasswd -a sunil
+  227  yum install samba* -y
+  228  smbpasswd -a chinna
+  229  systemctl restart smb
+  230  ls -ld /common/
+  231  chmod 777 /common/
+  232  smbpasswd -a chinna
+  233  systemctl restart smb
+  234  ls -ld /common/
+  235  chmod 777 /common/
+  236  vim /etc/samba/smb.conf
+  237  vim /etc/samba/smb.conf
+  238  cd 
+  239  cd Desktop/
+  240  useradd natasha
+  241  yum install samba -y
+  242  mkdir /store/
+  243  cd /store/
+  244  ls
+  245  touch f1 f2 f3
+  246  ls
+  247  vim /etc/samba/smb.conf
+  248  systemctl restart smb
+  249  iptables
+  250  iptables -F
+  251  smbpasswd -a natasha 
+  252  systemctl restart smb
+  253  ls -ld /store/
+  254  vim /etc/samba/smb.conf
+  255  systemctl restart smb
+  256  getenforce
+  257  chmod 777 /store/
+  258  systemctl restart smb
+  259  history
+  260  vim /etc/samba/smb.conf
+  261  cat /etc/passwd
+  262  iptables -Fusera
+  263  systemctl restart smb
+  264  smbpasswd -a natasha 
+  265  iptables -F
+  266  systemctl restart smb
+  267  cd
+  268  cd Desktop
+  269  vim /etc/samba/smb.conf
+  270  smbpasswd -a natasha
+  271  systemctl restart smb
+  272  iptables -F
+  273  groupadd -r marketing
+  274  mkdir -p /smbshare
+  275  chgrp marketing /smbshare/
+  276  chmod 2775 /smbshare
+  277  ls -Zd /smbshare/
+  278  vim /etc/samba/smb.conf
+  279  vim /etc/hosts
+  280  useradd -G marketing brian
+  281  useradd rob
+  282  vim /etc/samba/smb.conf
+  283  vim /etc/samba/smb.conf
+  284  cat /etc/samba/smb.conf
+  285  smbpasswd -a brian
+  286  smbpasswd -a rob
+  287  systemctl restart smb
+  288  iptables -F
+  289  chcon -aRt samba_share_t '/smbshare(/.*)?'
+  290  semanage fcontext -a -t samba_share_t '/smbshare(/.*)?'
+  291  systemctl restart smb
+  292  cd /smbshare/
+  293  ls -Z
+  294  ls
+  295  ls -l
+  296  cd
