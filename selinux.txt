@@ -1,0 +1,52 @@
+  getenforce
+   28  setenforce 0
+   29  getenforce
+   30  setenforce 1
+   31  getenforce
+   32  vim /etc/sysconfig/selinux
+   33  reboot
+   34  getenforce 
+   35  setenforce1
+   36  setenforce 1
+   37  vim /etc/sysconfig/selinux
+   38  reboot
+   39  cd 
+   40  ifconfig
+   41  getenforce
+   42  vim /etc/sysconfig/selinux l
+   43  ls
+   44  ls -Z file1
+   45  pwd
+   46  cd
+   47  ls -Z
+   48  cd /
+   49  ls -Z
+   50  cd /root/Desktop/
+   51  cd /var/ftp/pub/
+   52  ls -Zd /var/ftp/pub/
+   53  ls -Z
+   54  cd /root/Desktop/
+   55  ls
+   56  ls -Z f3
+   57  touch /tmp/f3
+   58  ls -Z /tmp/f3
+   59  touch /usr/f3
+   60  ls -Z /usr/f3
+   61  chcon -Rt nfs_t f3
+   62  touch f3
+   63  chcon -Rt nfs_t f3
+   64  ls -Z f3
+   65  chcon -Rt nfs_t f3
+   66  ls -Z f3
+   67  restorecon -R f3
+   68  ls -Z f3
+   69  sestatus
+   70  getsebool -a
+   71  getsebool -a | grep nfs
+   72  setsebool nfs_export_all_ro=0
+   73  getsebool -a | grep nfs
+   74  setsebool nfs_export_all_ro=1
+   75  getsebool -a | grep nfs
+   76  setsebool -p nfs_export_all_ro=1
+   77  setsebool -P nfs_export_all_ro=1
+   78  cat /etc/passwd
