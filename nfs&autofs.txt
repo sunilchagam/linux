@@ -1,0 +1,27 @@
+  yum install nfs-utils -y
+  169  mkdir /common
+  170  cp * /common/
+  171  cd /common/
+  172  ls -l
+  173  ls -ld /commom/
+  174  ls -ld /common/
+  175  vim /etc/exports
+  176  systemctl restart nfs
+  177  iptables -F
+  178  if config | more; 
+  179  ifconfig | more
+  180  vim /etc/exports
+  181  systemctl restart nfs
+  182  systemctl restart nfs
+  183  vim /etc/exports
+  184  hostname
+  185  vim /etc/exports
+  186  systemctl restart autofs
+  187  systemctl restart nfs
+  188  iptables -F
+  189  vim /etc/hosts
+  190  systemctl restart nfs
+  191  vim /etc/hosts
+  192  vim /etc/hosts
+  193  iptables -F
+  194  vim /etc/exports
