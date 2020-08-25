@@ -1,0 +1,101 @@
+ mdadm -E /dev/sdc /dev/sdd
+  395  mdadm -E /dev/sde /dev/sdf
+  396  fdisk /dev/sde
+  397  mdadm -E /dev/sdf /dev/sdg
+  398  reboot
+  399  mdadm -E /dev/sdf /dev/sdg
+  400  fdisk /dev/sdf
+  401  fdisk /dev/sdg
+  402  partprobe /dev/sdf
+  403  partprobe /dev/sdg
+  404  mdadm -E /dev/sdf /dev/sdg
+  405  mdadm -E /dev/sdf1 /dev/sdg1
+  406  mdadm --create /dev/md0 --level=mirror --raid-devices=2 /dev/sdf1 /dev/sdg1
+  407  mdadm -E /dev/sdf1 /dev/sdg1
+  408  mdadm --detail /dev/md0
+  409  mkfs -t xfs /dev/md0
+  410  mkdir /mnt/data
+  411  mount /dev/md0 /mnt/data
+  412  cd /mnt/data
+  413  ls
+  414  touch cgi.txt
+  415  cat >> cgi1.txt
+  416  ls
+  417  df -hT
+  418  vim /etc/fstab
+  419  vim /etc/mdadm.conf
+  420  mdadm --detail --scan --verbose >> /etc/mdadm.conf
+  421  vim /etc/mdadm.con
+  422  mdadm --detail /dev/md0
+  423  vim /etc/mdadm.conf
+  424  mdadm --detail /dev/md0
+  425  cd
+  426  cd /mnt/data/
+  427  ls
+  428  cd 
+  429  reboot
+  430  ping 192.168.189.128
+  431  mdadm --detail /dev/md0
+  432  reboot
+  433  mdadm --detail /dev/md0
+  434  cd /mnt/data/
+  435  ls
+  436  cat cgi1.txt
+  437  cd
+  438  reboot
+  439  fdisk /dev/sdh
+  440  fdisk /dev/sdh
+  441  fdisk /dev/sdi
+  442  fdisk /dev/sdj
+  443  fdisk /dev/sdk
+  444  fdisk /dev/sdg
+  445  partprobe /dev/sdg
+  446  partprobe /dev/sdh
+  447  partprobe /dev/sdi
+  448  partprobe /dev/sdj
+  449  mdadm -E /dev/sdg /dev/sdh /dev/sdi /dev/sdj
+  450  mdadm --create /dev/md1 --level=mirror --raid1-devices=4 /dev/sdg1 /dev/sdh1 /dev/sdi1 /dev/sdj1
+  451  mdadm --create /dev/md1 --level=mirror --raid-devices=4 /dev/sdg1 /dev/sdh1 /dev/sdi1 /dev/sdj1
+  452  mdadm -E /dev/sdg1 /dev/sdh1 /dev/sdi1 /dev/sdj1
+  453  mdadm --detail /dev/md1
+  454  mkfs -t xfs /dev/md1
+  455  mkdit /mnt/data
+  456  mkdir /mnt/data
+  457  mkdir /mnt/data1
+  458  mount /dev/md1 /mnt/data1
+  459  cd /mnt/data1
+  460  touch hcl.txt
+  461  cat >> hcl1.txt
+  462  lls
+  463   ls
+  464  df -hT
+  465  vim /etc/fstab
+  466  mdadm --detail --scan --verbose >> /etc/mdadm.conf
+  467  vim /etc/mdadm.conf
+  468  mdadm --detail /dev/md1
+  469  cd
+  470  reboot
+  471  reboot
+  472  vim /etc/fstab
+  473  reboot
+  474  vim /etc/fstab
+  475  reboot
+  476  mdadm --detail /dev/md1
+  477  cd /mnt/data1
+  478  lslsdflLSS
+  479  ls
+  480  vim /etc/fstab
+  481  vim /etc/fstab
+  482  ls
+  483  cat hcl1.txt
+  484  cd
+  485  df -hT
+  486  vim /etc/fstab
+  487  mdadm /dev/md0 --details
+  488  reboot
+  489  vim /etc/fstab
+  490  reboot
+  491  mdadm /dev/md0 --details
+  492  mdadm --detail /dev/md0
+  493  vim /etc/fstab
+  494  reboot
