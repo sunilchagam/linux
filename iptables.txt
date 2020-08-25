@@ -1,0 +1,64 @@
+iptables -L
+  327  iptables -L | more
+  328  iptables -F
+  329  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22
+  330  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  331  iptables -L | more
+  332  CD
+  333  cd
+  334  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  335  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22
+  336  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  337  iptables -L | more
+  338  ifconfig
+  339  ping 192.168.91.148
+  340  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j ACCEPT
+  341  iptables -F
+  342  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  343  vim /etc/ssh/sshd_config
+  344  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j ACCEPT
+  345  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  346  iptables -t filter -I INPUT -s 192.168.91.146 -p tcp --dport 22 -j REJECT
+  347  iptables -L
+  348  iptables -t filter -I OUTPUT -d 192.168.91.146 -p tcp --dport 22 -j REJECT
+  349  iptables -t filter -I OUTPUT -p tcp --dport 22 -j REJECT
+  350  iptables -L | more
+  351  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  352  iptables -t filter -I OUTPUT -p icmp -j DROP
+  353  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  354  iptables -t filter -I OUTPUT -p icmp -j DROP
+  355  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  356  iptables -t filter -I OUTPUT -p icmp -j DROP
+  357  nmtui
+  358  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  359  iptables -t filter -I OUTPUT -p icmp -j DROP
+  360  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  361  iptables -t filter -I OUTPUT -p icmp -j DROP
+  362  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  363  iptables -t filter -I OUTPUT -p icmp -j DROP
+  364  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  365  ls -l /bin/ping
+  366  chmod 4755 /bin/ping
+  367  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  368  iptables -t filter -I OUTPUT -p icmp -j DROP
+  369  iptables -t filter -I OUTPUT -p icmp -j ACCEPT
+  370  iptables -t filter -I OUTPUT -p icmp -j REJECT
+  371  iptables -t filter -I OUTPUT -p icmp -j DROP
+  372  where is ping
+  373  whereis ping
+  374  chmod 4755 /usr/bin/ping
+  375  nmtui
+  376  iptables -t filter -I INPUT -p icmp -j REJECT
+  377  history
+  378  iptables -t filter -I INPUT -p icmp -j ACCEPT
+  379  iptables -t filter -I INPUT -p icmp -j ACCEPT
+  380  vim /etc/reslov.conf
+  381  vim /etc/resolv.conf
+  382  iptables -F
+  383  hostname
+  384  ping 192.168.91.148
+  385  ifconfig
+  386  exit
+  387  iptables -F
+  388  vim /etc/ssh/sshd_config
+  389  systemctl restart sshd
