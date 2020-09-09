@@ -1,0 +1,3 @@
+date
+ifconfig
+uname -r
